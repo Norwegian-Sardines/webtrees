@@ -17,24 +17,37 @@
 
 declare(strict_types=1);
 
-namespace Fisharebest\Webtrees\GedcomCode;
+namespace Fisharebest\Webtrees\Module;
 
-use Fisharebest\Webtrees\TestCase;
+use Fisharebest\Webtrees\Contracts\ElementInterface;
+use Fisharebest\Webtrees\Elements\UnknownElement;
+use Fisharebest\Webtrees\I18N;
 
 /**
- * Test harness for the class GedcomCodeAdop
- *
- * @covers \Fisharebest\Webtrees\GedcomCode\GedcomCodeAdop
+ * Class CustomTagsGedcom55
  */
-class GedcomCodeAdopTest extends TestCase
+class CustomTagsGedcom55 extends AbstractModule implements ModuleConfigInterface, ModuleCustomTagsInterface
 {
+    use ModuleConfigTrait;
+    use ModuleCustomTagsTrait;
+
     /**
-     * Test that the class exists
-     *
-     * @return void
+     * @return array<string,ElementInterface>
      */
-    public function testClassExists(): void
+    public function customTags(): array
     {
-        self::assertTrue(class_exists(GedcomCodeAdop::class));
+        return [
+            'OBJE:BLOB' => new UnknownElement(I18N::translate('Binary data object')), // *** GEDCOM 5.5
+        ];
+    }
+
+    /**
+     * The application for which we are supporting custom tags.
+     *
+     * @return string
+     */
+    public function customTagApplication(): string
+    {
+        return 'GEDCOM 5.5';
     }
 }

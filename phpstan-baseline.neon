@@ -41,18 +41,8 @@ parameters:
 			path: app/Fact.php
 
 		-
-			message: "#^Parameter \\#1 \\$string of function strlen expects string, string\\|false given\\.$#"
-			count: 1
-			path: app/Factories/ImageFactory.php
-
-		-
-			message: "#^Parameter \\#3 \\$headers of function response expects array\\<string\\>, array\\<string, string\\|false\\> given\\.$#"
-			count: 1
-			path: app/Factories/ImageFactory.php
-
-		-
-			message: "#^Parameter \\#2 \\$mime_type of method Fisharebest\\\\Webtrees\\\\Factories\\\\ImageFactory\\:\\:imageResponse\\(\\) expects string, string\\|false given\\.$#"
-			count: 1
+			message: "#^Caught class Fisharebest\\\\Webtrees\\\\Factories\\\\FileNotFoundException not found\\.$#"
+			count: 3
 			path: app/Factories/ImageFactory.php
 
 		-
@@ -121,11 +111,6 @@ parameters:
 			path: app/Functions/FunctionsPrint.php
 
 		-
-			message: "#^Argument of an invalid type array\\<int, string\\>\\|false supplied for foreach, only iterables are supported\\.$#"
-			count: 1
-			path: app/Functions/FunctionsPrintFacts.php
-
-		-
 			message: "#^Parameter \\#3 \\$offset of function strpos expects int, int\\<0, max\\>\\|false given\\.$#"
 			count: 1
 			path: app/Functions/FunctionsPrintFacts.php
@@ -136,27 +121,12 @@ parameters:
 			path: app/Functions/FunctionsPrintFacts.php
 
 		-
-			message: "#^Parameter \\#1 \\$text of static method Fisharebest\\\\Webtrees\\\\Filter\\:\\:expandUrls\\(\\) expects string, array\\<string\\>\\|string given\\.$#"
-			count: 1
-			path: app/Functions/FunctionsPrintFacts.php
-
-		-
-			message: "#^Parameter \\#1 \\$value of function e expects Illuminate\\\\Contracts\\\\Support\\\\Htmlable\\|string, array\\<string\\>\\|string given\\.$#"
-			count: 2
-			path: app/Functions/FunctionsPrintFacts.php
-
-		-
-			message: "#^Parameter \\#1 \\$date of class Fisharebest\\\\Webtrees\\\\Date constructor expects string, array\\<string\\>\\|string given\\.$#"
-			count: 1
+			message: "#^Parameter \\#1 \\$value of method Fisharebest\\\\Webtrees\\\\Contracts\\\\ElementInterface\\:\\:labelValue\\(\\) expects string, array\\<string\\>\\|string given\\.$#"
+			count: 5
 			path: app/Functions/FunctionsPrintFacts.php
 
 		-
 			message: "#^Argument of an invalid type array\\<string\\>\\|string supplied for foreach, only iterables are supported\\.$#"
-			count: 1
-			path: app/Functions/FunctionsPrintFacts.php
-
-		-
-			message: "#^Parameter \\#1 \\$type of static method Fisharebest\\\\Webtrees\\\\GedcomCode\\\\GedcomCodeQuay\\:\\:getValue\\(\\) expects string, array\\<string\\>\\|string given\\.$#"
 			count: 1
 			path: app/Functions/FunctionsPrintFacts.php
 
@@ -250,11 +220,6 @@ parameters:
 			path: app/GedcomRecord.php
 
 		-
-			message: "#^Parameter \\#1 \\$num of function dechex expects int, float\\|int given\\.$#"
-			count: 1
-			path: app/GedcomTag.php
-
-		-
 			message: "#^Strict comparison using \\=\\=\\= between '\\-dev' and '' will always evaluate to false\\.$#"
 			count: 1
 			path: app/Helpers/functions.php
@@ -283,6 +248,11 @@ parameters:
 			message: "#^Parameter \\#1 \\$port of method Psr\\\\Http\\\\Message\\\\UriInterface\\:\\:withPort\\(\\) expects int\\|null, int\\|false\\|null given\\.$#"
 			count: 1
 			path: app/Http/Middleware/BaseUrl.php
+
+		-
+			message: "#^Caught class League\\\\Flysystem\\\\NotSupportedException not found\\.$#"
+			count: 1
+			path: app/Http/Middleware/HandleExceptions.php
 
 		-
 			message: "#^Parameter \\#1 \\$message of static method Fisharebest\\\\Webtrees\\\\Log\\:\\:addErrorLog\\(\\) expects string, string\\|null given\\.$#"
@@ -345,11 +315,6 @@ parameters:
 			path: app/Http/RequestHandlers/DataFixSelect.php
 
 		-
-			message: "#^Cannot access offset 'type' on array\\|false\\.$#"
-			count: 1
-			path: app/Http/RequestHandlers/DeletePath.php
-
-		-
 			message: "#^Left side of && is always true\\.$#"
 			count: 1
 			path: app/Http/RequestHandlers/DeleteRecord.php
@@ -380,7 +345,12 @@ parameters:
 			path: app/Http/RequestHandlers/ExportGedcomClient.php
 
 		-
-			message: "#^Parameter \\#2 \\$resource of method League\\\\Flysystem\\\\Filesystem\\:\\:writeStream\\(\\) expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$zipArchiveProvider of class League\\\\Flysystem\\\\ZipArchive\\\\ZipArchiveAdapter constructor expects League\\\\Flysystem\\\\ZipArchive\\\\ZipArchiveProvider, string given\\.$#"
+			count: 1
+			path: app/Http/RequestHandlers/ExportGedcomClient.php
+
+		-
+			message: "#^Call to an undefined method League\\\\Flysystem\\\\ZipArchive\\\\ZipArchiveAdapter\\:\\:getArchive\\(\\)\\.$#"
 			count: 1
 			path: app/Http/RequestHandlers/ExportGedcomClient.php
 
@@ -445,11 +415,6 @@ parameters:
 			path: app/Http/RequestHandlers/ImportGedcomAction.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function sha1 expects string, string\\|false given\\.$#"
-			count: 1
-			path: app/Http/RequestHandlers/ImportThumbnailsAction.php
-
-		-
 			message: "#^Cannot call method tree\\(\\) on Fisharebest\\\\Webtrees\\\\Media\\|null\\.$#"
 			count: 1
 			path: app/Http/RequestHandlers/ImportThumbnailsAction.php
@@ -498,6 +463,11 @@ parameters:
 			message: "#^Method Fisharebest\\\\Webtrees\\\\Http\\\\RequestHandlers\\\\IndividualPage\\:\\:getTabs\\(\\) should return Illuminate\\\\Support\\\\Collection&iterable\\<Fisharebest\\\\Webtrees\\\\Module\\\\ModuleTabInterface\\> but returns Illuminate\\\\Support\\\\Collection&iterable\\<Fisharebest\\\\Webtrees\\\\Module\\\\ModuleInterface\\>\\.$#"
 			count: 1
 			path: app/Http/RequestHandlers/IndividualPage.php
+
+		-
+			message: "#^Caught class Fisharebest\\\\Webtrees\\\\Http\\\\RequestHandlers\\\\FileNotFoundException not found\\.$#"
+			count: 1
+			path: app/Http/RequestHandlers/ManageMediaData.php
 
 		-
 			message: "#^Parameter \\#4 \\$sort_columns of method Fisharebest\\\\Webtrees\\\\Services\\\\DatatablesService\\:\\:handleQuery\\(\\) expects array\\<string\\>, array\\<int, Illuminate\\\\Database\\\\Query\\\\Expression\\|string\\> given\\.$#"
@@ -600,7 +570,7 @@ parameters:
 			path: app/Http/RequestHandlers/Select2Place.php
 
 		-
-			message: "#^Parameter \\#1 \\$value of function e expects Illuminate\\\\Contracts\\\\Support\\\\Htmlable\\|string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$value of function e expects Illuminate\\\\Contracts\\\\Support\\\\DeferringDisplayableValue\\|Illuminate\\\\Contracts\\\\Support\\\\Htmlable\\|string, string\\|false given\\.$#"
 			count: 1
 			path: app/Http/RequestHandlers/SetupWizard.php
 
@@ -615,7 +585,7 @@ parameters:
 			path: app/Http/RequestHandlers/SiteLogsData.php
 
 		-
-			message: "#^Parameter \\#2 \\$resource of method League\\\\Flysystem\\\\FilesystemInterface\\:\\:writeStream\\(\\) expects resource, resource\\|null given\\.$#"
+			message: "#^Call to an undefined method League\\\\Flysystem\\\\FilesystemOperator\\:\\:has\\(\\)\\.$#"
 			count: 1
 			path: app/Http/RequestHandlers/UploadMediaAction.php
 
@@ -710,11 +680,6 @@ parameters:
 			path: app/Media.php
 
 		-
-			message: "#^Method Fisharebest\\\\Webtrees\\\\MediaFile\\:\\:fileContents\\(\\) should return string but returns string\\|false\\.$#"
-			count: 1
-			path: app/MediaFile.php
-
-		-
 			message: "#^Cannot call method updateFact\\(\\) on Fisharebest\\\\Webtrees\\\\Individual\\|null\\.$#"
 			count: 1
 			path: app/Module/CensusAssistantModule.php
@@ -725,7 +690,12 @@ parameters:
 			path: app/Module/ClippingsCartModule.php
 
 		-
-			message: "#^Parameter \\#2 \\$resource of method League\\\\Flysystem\\\\Filesystem\\:\\:writeStream\\(\\) expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$zipArchiveProvider of class League\\\\Flysystem\\\\ZipArchive\\\\ZipArchiveAdapter constructor expects League\\\\Flysystem\\\\ZipArchive\\\\ZipArchiveProvider, string given\\.$#"
+			count: 1
+			path: app/Module/ClippingsCartModule.php
+
+		-
+			message: "#^Call to an undefined method League\\\\Flysystem\\\\ZipArchive\\\\ZipArchiveAdapter\\:\\:getArchive\\(\\)\\.$#"
 			count: 1
 			path: app/Module/ClippingsCartModule.php
 
@@ -1575,6 +1545,11 @@ parameters:
 			path: app/Report/TcpdfWrapper.php
 
 		-
+			message: "#^Parameter \\#1 \\$table of static method Illuminate\\\\Database\\\\Capsule\\\\Manager\\:\\:table\\(\\) expects Closure\\|Illuminate\\\\Database\\\\Query\\\\Builder\\|string, Illuminate\\\\Database\\\\Query\\\\Expression given\\.$#"
+			count: 2
+			path: app/Services/AdminService.php
+
+		-
 			message: "#^Anonymous function should return Fisharebest\\\\Webtrees\\\\Source but returns Fisharebest\\\\Webtrees\\\\Source\\|null\\.$#"
 			count: 1
 			path: app/Services/AdminService.php
@@ -1591,16 +1566,6 @@ parameters:
 
 		-
 			message: "#^Anonymous function should return Fisharebest\\\\Webtrees\\\\Media but returns Fisharebest\\\\Webtrees\\\\Media\\|null\\.$#"
-			count: 1
-			path: app/Services/AdminService.php
-
-		-
-			message: "#^Parameter \\#1 \\$fp of function fread expects resource, resource\\|false given\\.$#"
-			count: 1
-			path: app/Services/AdminService.php
-
-		-
-			message: "#^Parameter \\#1 \\$fp of function fclose expects resource, resource\\|false given\\.$#"
 			count: 1
 			path: app/Services/AdminService.php
 
@@ -1640,11 +1605,6 @@ parameters:
 			path: app/Services/ClipboardService.php
 
 		-
-			message: "#^Parameter \\#1 \\$column of method Illuminate\\\\Database\\\\Query\\\\Builder\\:\\:orderBy\\(\\) expects string, Illuminate\\\\Database\\\\Query\\\\Expression\\|string given\\.$#"
-			count: 1
-			path: app/Services/DatatablesService.php
-
-		-
 			message: "#^Parameter \\#1 \\$hostname of function gethostbyname expects string, string\\|false given\\.$#"
 			count: 1
 			path: app/Services/EmailService.php
@@ -1680,8 +1640,8 @@ parameters:
 			path: app/Services/HomePageService.php
 
 		-
-			message: "#^Cannot access offset 'type' on array\\|false\\.$#"
-			count: 2
+			message: "#^Call to an undefined method League\\\\Flysystem\\\\FilesystemOperator\\:\\:getMetadata\\(\\)\\.$#"
+			count: 1
 			path: app/Services/HousekeepingService.php
 
 		-
@@ -1701,11 +1661,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$path of function pathinfo expects string, string\\|null given\\.$#"
-			count: 1
-			path: app/Services/MediaFileService.php
-
-		-
-			message: "#^Parameter \\#2 \\$resource of method League\\\\Flysystem\\\\FilesystemInterface\\:\\:putStream\\(\\) expects resource, resource\\|null given\\.$#"
 			count: 1
 			path: app/Services/MediaFileService.php
 
@@ -1755,7 +1710,7 @@ parameters:
 			path: app/Services/ServerCheckService.php
 
 		-
-			message: "#^Parameter \\#1 \\$value of function e expects Illuminate\\\\Contracts\\\\Support\\\\Htmlable\\|string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$value of function e expects Illuminate\\\\Contracts\\\\Support\\\\DeferringDisplayableValue\\|Illuminate\\\\Contracts\\\\Support\\\\Htmlable\\|string, string\\|false given\\.$#"
 			count: 1
 			path: app/Services/ServerCheckService.php
 
@@ -1785,22 +1740,12 @@ parameters:
 			path: app/Services/UpgradeService.php
 
 		-
-			message: "#^Parameter \\#2 \\$resource of method League\\\\Flysystem\\\\FilesystemInterface\\:\\:writeStream\\(\\) expects resource, resource\\|false given\\.$#"
-			count: 1
-			path: app/Services/UpgradeService.php
-
-		-
 			message: "#^Parameter \\#1 \\$fp of function fclose expects resource, resource\\|false given\\.$#"
 			count: 1
 			path: app/Services/UpgradeService.php
 
 		-
 			message: "#^Method Fisharebest\\\\Webtrees\\\\Services\\\\UpgradeService\\:\\:downloadFile\\(\\) should return int but returns int\\|false\\.$#"
-			count: 1
-			path: app/Services/UpgradeService.php
-
-		-
-			message: "#^Parameter \\#2 \\$contents of method League\\\\Flysystem\\\\FilesystemInterface\\:\\:put\\(\\) expects string, string\\|false given\\.$#"
 			count: 1
 			path: app/Services/UpgradeService.php
 

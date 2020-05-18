@@ -439,7 +439,7 @@ class Fact
      *
      * @deprecated since 2.0.5.  Will be removed in 2.1.0
      */
-    public function setTag(string $tag): void
+    public function setTag($tag): void
     {
         $this->tag = $tag;
     }
